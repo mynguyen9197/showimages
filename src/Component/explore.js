@@ -16,11 +16,11 @@ class Explore extends React.Component {
 	}	
 
 	loadItems(){
-			const url = `https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=df190dc2a5b8175b929b817b093ca0cb&extras=owner_name%2C+url_n%2C+views&per_page=20&page=${this.state.curPage}&format=json&nojsoncallback=1`;
+			const url = `https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=9b0ccd8722b7da4be90436753d1893d6&extras=owner_name%2C+url_n%2C+views&per_page=20&page=${this.state.curPage}&format=json&nojsoncallback=1`;
 			axios.get(url)
-		      .then(async(res) => {
-		        let imageList = this.state.imageList;
-		        await res.data.photos.photo.map(image => imageList.push(image));
+		      .then(res => {
+		      	let imageList = this.state.imageList;
+		        res.data.photos.photo.map(image => imageList.push(image));
 		        if(this.state.imageList.length<500){
 		        	const curPage = this.state.curPage+1;
 		        	this.setState({ imageList, curPage });
