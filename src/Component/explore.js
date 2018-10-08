@@ -44,11 +44,11 @@ class Explore extends React.Component {
 		            <div><a href="/" className="logo">MY COLLECTION</a></div>
 		            <ul className="menu-nav">
 		              <li><a href="/">You</a></li>
-		              <li><a href="/">Explore</a></li>
-		              <li><a href="/">Create</a></li>
 		              <li><a href="/">Get Pro</a></li>
 		            </ul>
 		            <ul className="tool-nav">
+		              <li>Login</li>
+		              <li>Sign</li>
 		              <li><Link to="/search">Search Tag</Link></li>
 		            </ul>
 		          </div>

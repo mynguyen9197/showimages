@@ -61,7 +61,6 @@ class Photo extends React.Component {
 		            <div><a href="/" className="logo">MY COLLECTION</a></div>
 		            <ul className="menu-nav">
 		              <li><a href="/">You</a></li>
-		              <li><a href="/">Explore</a></li>
 		              <li><a href="/">Create</a></li>
 		              <li><a href="/">Get Pro</a></li>
 		            </ul>

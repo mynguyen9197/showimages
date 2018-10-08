@@ -69,10 +69,7 @@ class Search extends React.Component {
 		            <div><span></span></div>
 		            <div><a href="/" className="logo">MY COLLECTION</a></div>
 		            <ul className="menu-nav">
-		              <li><a href="/">You</a></li>
-		              <li><a href="/">Explore</a></li>
-		              <li><a href="/">Create</a></li>
-		              <li><a href="/">Get Pro</a></li>
+		              <li><Link to="/">Explore</Link></li>
 		            </ul>
 					<ul className="tool-nav">
 						<li>
@@ -83,7 +80,7 @@ class Search extends React.Component {
 							</label>
 						</form>
 						</li>
-						<li><Link to="/">Explore</Link></li>
+						
 					</ul>
 					</div>
 				</div>
