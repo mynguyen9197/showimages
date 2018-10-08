@@ -78,8 +78,7 @@ li a {
   padding-inline-start: 40px;
   text-align: right;
   display: flex;
-  margin-left: 200px;
-  margin-right: 50px;
+  margin-left: 100px;
 }
 
 .App-body {
@@ -197,13 +196,18 @@ li a {
   width: 1060px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20px;
+  display: inline-block;
 }
 
 .photo-left {
   margin-right: 60px;
   margin-bottom: 120px;
-  width: 500px;
+  width: 50%;
   float: left;
+  display: inline-block;
+  border-bottom: 1px solid #cfd6d9;
+  padding-bottom: 20px;
 }
 
 .photo-avatar {
@@ -218,7 +222,6 @@ li a {
 .photo-contain-left{
   margin-top: 12px;
   margin-left: 20px;
-  width: 85%;
 }
 
 .photo-author {
@@ -241,13 +244,13 @@ li a {
   line-height: 18px;
   margin-bottom: 10px;
   min-height: 18px;
-  display: inline-block;
-  width: 404px;
   word-wrap: break-word;
-  margin-left: -330px;
+  float: left;
+  margin-left: 20px;
+  padding-left: 5px;
 }
 
-.photo-contain-left button{
+.photo-btn-left {
   background-color: #008ddf;
   font-size: 16px;
   margin-top: -10px;
@@ -260,6 +263,8 @@ li a {
 }
 
 .photo-right {
+  border-bottom: 1px solid #cfd6d9;
+  padding-bottom: 20px;
   background: #f3f5f6;
   font-weight: 400;
   font-size: 20px;
@@ -268,12 +273,13 @@ li a {
   margin-top: 13px;
   float: left;
   width: 223px;
+  background: #fff;
+  display: inline-block;
 }
 
 .photo-view {
   font-weight: 400;
   font-size: 20px;
-  background: #fff;
 }
 
 .photo-right-note {
@@ -281,6 +287,13 @@ li a {
   font-size: 14px;
   font-weight: 400;
   color: #898989;
+}
+
+.photo-datetaken {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: -30px;
+  margin-right: -500px;
 }
 
 @keyframes App-logo-spin {

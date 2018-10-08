@@ -62,30 +62,29 @@ class Search extends React.Component {
 	}
 
 	render() {
-		const loader = <div className="loader">Loading ...</div>;
 		return (
 			<div className="App">
-				<div className="App-nav">
-					<div className="App-nav-content">
-						<div><span></span></div>
-						<div><a href="/" className="logo">MY COLLECTION</a></div>
-						<ul>
-							<li><a href="/">You</a></li>
-							<li><a href="/">Explore</a></li>
-							<li><a href="/">Create</a></li>
-							<li><a href="/">Get Pro</a></li>
-						</ul>
-						<ul className="tool-nav">
-							<li>
-							<form action="" method="get" id="myForm" onSubmit={this.handleSubmit}>
-								<label>
-									<button id="btn" type="submit"><FontAwesomeIcon icon={faSearch} /></button>
-									<input type="text" value={this.state.curTag} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
-								</label>
-							</form>
-							</li>
-							<li><Link to="/">Explore</Link></li>
-						</ul>
+		        <div className="App-nav">
+		          <div className="App-nav-content">
+		            <div><span></span></div>
+		            <div><a href="/" className="logo">MY COLLECTION</a></div>
+		            <ul className="menu-nav">
+		              <li><a href="/">You</a></li>
+		              <li><a href="/">Explore</a></li>
+		              <li><a href="/">Create</a></li>
+		              <li><a href="/">Get Pro</a></li>
+		            </ul>
+					<ul className="tool-nav">
+						<li>
+						<form action="" method="get" id="myForm" onSubmit={this.handleSubmit}>
+							<label>
+								<button id="btn" type="submit"><FontAwesomeIcon icon={faSearch} /></button>
+								<input type="text" value={this.state.curTag} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
+							</label>
+						</form>
+						</li>
+						<li><Link to="/">Explore</Link></li>
+					</ul>
 					</div>
 				</div>
 				<div className="App-main">
