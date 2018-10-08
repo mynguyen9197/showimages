@@ -1,8 +1,9 @@
 import React from 'react';
 import '../App.css';
-import Image from './Image';
+import Thumbnail from './thumbnail';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroller';
+import { Link } from "react-router-dom";
 
 class Explore extends React.Component {
 	constructor(props){
@@ -20,7 +21,10 @@ class Explore extends React.Component {
 			axios.get(url)
 		      .then(res => {
 		      	let imageList = this.state.imageList;
-		        res.data.photos.photo.map(image => imageList.push(image));
+		        res.data.photos.photo.map(image => {
+		        	image.src = `https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`
+		        	imageList.push(image)
+		        });
 		        if(this.state.imageList.length<500){
 		        	const curPage = this.state.curPage+1;
 		        	this.setState({ imageList, curPage });
@@ -33,16 +37,35 @@ class Explore extends React.Component {
 	render() {
 		const loader = <div className="loader">Loading ...</div>;
 		return (
-			<InfiniteScroll
-				pageStart={0}
-                loadMore={this.loadItems}
-                hasMore={this.state.hasMoreItems}
-                loader={loader}>
+			<div className="App">
+		        <div className="App-nav">
+		          <div className="App-nav-content">
+		            <div><span></span></div>
+		            <div><a href="/" className="logo">MY COLLECTION</a></div>
+		            <ul className="menu-nav">
+		              <li><a href="/">You</a></li>
+		              <li><a href="/">Explore</a></li>
+		              <li><a href="/">Create</a></li>
+		              <li><a href="/">Get Pro</a></li>
+		            </ul>
+		            <ul className="tool-nav">
+		              <li><Link to="/search">Search Tag</Link></li>
+		            </ul>
+		          </div>
+		        </div>
+				<InfiniteScroll
+					pageStart={0}
+	                loadMore={this.loadItems}
+	                hasMore={this.state.hasMoreItems}
+	                loader={loader}>
 
-				<div className="App-body">
-					{this.state.imageList.map((image, i) => <Image key={i} link={image.url_n} owner={image.ownername} title={image.title} view={image.views}/>)}
-				</div>
-			</InfiniteScroll>
+	                <div className="App-main">
+						<div className="App-body">
+							{this.state.imageList.map((image, i) => <Thumbnail key={i} image={image}/>)}
+						</div>
+					</div>
+				</InfiniteScroll>
+			</div>
 		);
 	}
 }
