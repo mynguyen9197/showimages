@@ -182,14 +182,12 @@ li a {
 }
 
 .photo-image {
-  height: 500px;
   background: #212124;
 }
 
 .photo-content {
   margin: auto;
   padding: 50px 0;
-  height: 430px;
 }
 
 .photo-info {
@@ -263,16 +261,13 @@ li a {
 }
 
 .photo-right {
-  border-bottom: 1px solid #cfd6d9;
   padding-bottom: 20px;
   background: #f3f5f6;
-  font-weight: 400;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 17px;
   line-height: 18px;
-  margin-right: 30px;
   margin-top: 13px;
   float: left;
-  width: 223px;
   background: #fff;
   display: inline-block;
 }
@@ -280,13 +275,14 @@ li a {
 .photo-view {
   font-weight: 400;
   font-size: 20px;
+  width: 30%
 }
 
 .photo-right-note {
-  display: block;
   font-size: 14px;
   font-weight: 400;
   color: #898989;
+  width: 30%;
 }
 
 .photo-datetaken {
