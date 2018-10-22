@@ -3,16 +3,22 @@ import '../App.css';
 import NavBar from './NavBar.js'
 import photo from '../ico/if_andrew_60496.png';
 import axios from 'axios';
+import { withRouter } from "react-router-dom";
+import { changeTag, addPhotos, removePhotos } from '../actions'
+import { connect } from 'react-redux'
 
 class Photo extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			curPhoto: '',
-			date: '',
 			src: '',
-			ownername: '',
-
+			ownername:'',
+			title:'',
+			comments: '',
+			date: '',
+			views: '',
+			description: '',
+			tags: []
 		}
 	}
 
@@ -22,10 +28,14 @@ class Photo extends React.Component {
 		.then(res => {
 			const curPhoto = res.data.photo
 			const src = `https://farm${res.data.photo.farm}.staticflickr.com/${res.data.photo.server}/${res.data.photo.id}_${res.data.photo.secret}.jpg`
-			const date = res.data.photo.dates.taken
 			const ownername = res.data.photo.owner.realname
+			const title = res.data.photo.title._content
 			const comments = res.data.photo.comments._content
-			this.setState({ curPhoto, date, src, ownername, comments  });
+			const date = res.data.photo.dates.taken
+			const views = res.data.photo.views
+			const description = res.data.photo.description._content
+			const tags = res.data.photo.tags.tag
+			this.setState({ src, ownername, title, comments, date, views, description, tags });
 		})
 	}
 
@@ -51,6 +61,12 @@ class Photo extends React.Component {
 		return m + ' ' + d + ',' +' ' + y; 
 	}
 
+	handleClick(tag){
+		this.props.dispatch(removePhotos())
+		this.props.dispatch(changeTag(tag))
+		this.props.history.push(`/search/${tag}`)
+	}
+
 	render(){
 		return (
 			<div className="App">
@@ -66,17 +82,29 @@ class Photo extends React.Component {
 								<a className="photo-author" href="">{this.state.ownername}</a>
 								<div><button className="photo-btn-left">Follow</button></div>
 							</div>
-							
+							<div className="photo-title">{this.state.title}</div><br />
+							<p className="photo-description">{this.state.description}</p>
 						</div>
 						<div className="photo-right">
 							<div className="photo-view">
-								{this.state.curPhoto.views}
-								<div className="photo-right-note">views</div>
+								<span>{this.state.views}</span><br />
+								<span className="photo-right-note">views</span>
 							</div>
 							<div className="photo-com">
-								{this.state.comments}
-								<div className="photo-right-com">comments</div>
+								<span>{this.state.comments}</span> <br />
+								<span className="photo-right-com">comments</span>
 							</div>
+							<div className="photo-datetaken">
+								Taken on {this.formatDate(this.state.date)}
+							</div>
+							<div className="tag">Tags</div><br />
+							<ul className="tag-list">
+								{this.state.tags.map((tag, i) => 
+									<li className="li-tag" key={i} onClick={this.handleClick.bind(this, tag._content)}>
+										<a >{tag.raw}</a>
+									</li>
+								)}
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -85,4 +113,4 @@ class Photo extends React.Component {
 	}
 }
 
-export default Photo;
+export default withRouter(connect()(Photo));

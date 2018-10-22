@@ -195,7 +195,6 @@ li a {
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  display: inline-block;
 }
 
 .photo-left {
@@ -203,7 +202,6 @@ li a {
   margin-bottom: 120px;
   width: 50%;
   float: left;
-  display: inline-block;
   border-bottom: 1px solid #cfd6d9;
   padding-bottom: 20px;
 }
@@ -246,6 +244,13 @@ li a {
   float: left;
   margin-left: 20px;
   padding-left: 5px;
+  margin-top: 10px;
+}
+
+.photo-description {
+  margin-top: 20px;
+  float: left;
+  margin-left: 60px;
 }
 
 .photo-btn-left {
@@ -269,16 +274,28 @@ li a {
   margin-top: 13px;
   float: left;
   background: #fff;
-  display: inline-block;
 }
 
 .photo-view {
   font-weight: 400;
   font-size: 20px;
-  width: 30%
+  position: absolute;
+}
+
+.photo-com {
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 100px;
 }
 
 .photo-right-note {
+  font-size: 14px;
+  font-weight: 400;
+  color: #898989;
+  width: 30%;
+}
+
+.photo-right-com {
   font-size: 14px;
   font-weight: 400;
   color: #898989;
@@ -290,6 +307,31 @@ li a {
   font-weight: 400;
   margin-top: -30px;
   margin-right: -500px;
+}
+
+.tag {
+  position: absolute;
+  margin-top: 50px;
+}
+
+.tag-list{
+  clear: both;
+  list-style: none;
+  padding: 0;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  position: absolute;
+}
+
+.li-tag {
+  background-color: #868d91;float: left;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  max-width: 96%;
+  margin: 0 5px 5px 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 @keyframes App-logo-spin {

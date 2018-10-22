@@ -9,16 +9,19 @@
     "@fortawesome/react-fontawesome": "^0.1.3",
     "axios": "^0.18.0",
     "gh-pages": "^2.0.0",
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.5.2",
     "react-fa-icon": "^0.1.4",
     "react-grid-gallery": "^0.5.3",
     "react-infinite-scroller": "^1.2.1",
+    "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
-    "reactstrap": "^6.5.0"
+    "reactstrap": "^6.5.0",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "predeploy": "npm run build",
